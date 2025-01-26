@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chatbot</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+    />
+    <link rel="stylesheet" href="chatbot.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  </head>
+  <body>
+    <div class="app-container">
+      <div id="history-container">
+        <div class="history-header">
+          <h3>Chat History</h3>
+          <button id="collapse-history-button" class="collapse-button">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+        </div>
+        <ul id="history-list"></ul>
+      </div>
+      <div id="chat-container">
+        <!-- Add reopen button at the start of chat-header -->
+        <div class="chat-header">
+          <div class="header-left">
+            <button id="reopen-history-button" class="history-toggle-button">
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="chat-title">
+              <i class="fas fa-robot"></i>
+              <h2>AI Assistant</h2>
+            </div>
+          </div>
+          <div class="header-buttons">
+            <button id="search-toggle" data-shortcut="Ctrl+K">
+              <i class="fas fa-search"></i>
+            </button>
+            <button id="export-button" data-shortcut="Ctrl+E">
+              <i class="fas fa-file-export"></i>
+            </button>
+            <button id="theme-toggle" data-shortcut="Ctrl+D">
+              <i class="fas fa-moon"></i>
+            </button>
+            <button id="new-chat-button" data-shortcut="Ctrl+N">
+              <i class="fas fa-plus"></i>
+            </button>
+            <button id="clear-button" data-shortcut="Ctrl+Del">
+              <i class="fas fa-trash"></i>
+            </button>
+            <button id="save-button" data-shortcut="Ctrl+S">
+              <i class="fas fa-save"></i>
+            </button>
+            <button id="load-button"><i class="fas fa-folder-open"></i></button>
+            <button id="help-button" data-shortcut="Ctrl+H">
+              <i class="fas fa-question-circle"></i>
+            </button>
+          </div>
+        </div>
+        <div
+          id="search-container"
+          class="search-container"
+          style="display: none"
+        >
+          <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Search messages..."
+          />
+        </div>
+        <div id="chat-box"></div>
+        <div id="typing-indicator">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+        </div>
+        <div class="input-container">
+          <input
+            type="text"
+            id="user-input"
+            placeholder="Type your message here..."
+          />
+          <button id="send-button"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+    <div id="help-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <p>Developed by Abhijeet Pachpute</p>
+      </div>
+    </div>
+    <div id="code-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div id="code-output"></div>
+      </div>
+    </div>
+    <script src="chatbot.js" type="module"></script>
+  </body>
+</html>
