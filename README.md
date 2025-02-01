@@ -26,9 +26,7 @@ A modern chatbot interface that uses the Google Gemini API for AI responses.
 ```
 3. Open 
 
-chatbot.html
-
- in a web browser
+chatbot.html in a web browser
 
 ## Screenshots
 Light theme (no message send):
@@ -77,4 +75,4 @@ MIT
 
 ## Author
 
-Abhijeet Pachpute
+Abhijeet Pachpute 😎
